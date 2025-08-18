@@ -11,11 +11,11 @@ The Airbnb Clone Project is a full-stack backend simulation of a real-world book
 - DevOps Engineer:	Sets up CI/CD pipelines, manages Docker containers, and automates deployments
 - Security Specialist:	Implements authentication, authorization, and monitors for vulnerabilities
 # Technology Stack
-- Django
-- MySQL
-- GraphQL
-- Docker
-- GitHub Actions
+- Django: Web framework for building scalable APIs
+- MySQL: Relational database for storing structured data
+- GraphQL: Query language for flexible and efficient data retrieval
+- Docker: Containerization for consistent development and deployment environments
+- GitHub Actions: CI/CD automation for testing and deployment
 # Database Design
 Entities and Fields
 - Users: id, name, email, password, created_at
