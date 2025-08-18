@@ -42,5 +42,5 @@ Rate Limiting Prevents abuse by limiting the number of requests per user/IP.
 Data Encryption Sensitive data like passwords and payment info are encrypted in transit and at rest.
 # CI/CD Pipeline
 CI/CD pipelines automate testing and deployment to ensure fast, reliable updates.
-Continuous Integration (CI) Automatically runs tests on every commit using GitHub Actions.
-Continuous Deployment (CD) Deploys code to production using Docker containers and GitHub workflows.
+- Continuous Integration (CI) Automatically runs tests on every commit using GitHub Actions.
+- Continuous Deployment (CD) Deploys code to production using Docker containers and GitHub workflows.
