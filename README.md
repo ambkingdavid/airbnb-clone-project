@@ -1,6 +1,6 @@
 # Overview
 The Airbnb Clone Project is a full-stack backend simulation of a real-world booking platform. It focuses on building scalable backend architecture, designing relational databases, implementing secure APIs, and deploying with CI/CD pipelines.
-## Project Goals
+# Project Goals
 - Build a robust backend for a booking platform
 - Practice collaborative development workflows
 - Apply modern security and deployment practices
