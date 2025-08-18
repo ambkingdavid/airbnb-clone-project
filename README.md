@@ -1,21 +1,26 @@
 # Overview
-The Airbnb Clone Project is a full-stack backend simulation of a real-world booking platform. It focuses on building scalable backend architecture, designing relational databases, implementing secure APIs, and deploying with CI/CD pipelines.
+The backend for the Airbnb Clone project is designed to provide a robust and scalable foundation for managing user interactions, property listings, bookings, and payments. This backend will support various functionalities required to mimic the core features of Airbnb, ensuring a smooth experience for users and hosts.
 # Project Goals
-- Build a robust backend for a booking platform
-- Practice collaborative development workflows
-- Apply modern security and deployment practices
-- Integrate Django, MySQL, and GraphQL into a unified system
+- User Management: Implement a secure system for user registration, authentication, and profile management.
+- Property Management: Develop features for property listing creation, updates, and retrieval.
+- Booking System: Create a booking mechanism for users to reserve properties and manage booking details.
+- Payment Processing: Integrate a payment system to handle transactions and record payment details.
+- Review System: Allow users to leave reviews and ratings for properties.
+- Data Optimization: Ensure efficient data retrieval and storage through database optimizations.
 # Team Roles
-- Backend Developer:	Builds RESTful APIs, handles business logic, and integrates services
-- Database Administrator:	Designs and manages the relational database schema and optimizes queries
-- DevOps Engineer:	Sets up CI/CD pipelines, manages Docker containers, and automates deployments
-- Security Specialist:	Implements authentication, authorization, and monitors for vulnerabilities
+- Backend Developer: Responsible for implementing API endpoints, database schemas, and business logic.
+- Database Administrator: Manages database design, indexing, and optimizations.
+- DevOps Engineer: Handles deployment, monitoring, and scaling of the backend services.
+- QA Engineer: Ensures the backend functionalities are thoroughly tested and meet quality standards.
 # Technology Stack
-- Django: Web framework for building scalable APIs
-- MySQL: Relational database for storing structured data
-- GraphQL: Query language for flexible and efficient data retrieval
-- Docker: Containerization for consistent development and deployment environments
-- GitHub Actions: CI/CD automation for testing and deployment
+-Django: A high-level Python web framework used for building the RESTful API.
+- Django REST Framework: Provides tools for creating and managing RESTful APIs.
+- PostgreSQL: A powerful relational database used for data storage.
+- GraphQL: Allows for flexible and efficient querying of data.
+- Celery: For handling asynchronous tasks such as sending notifications or processing payments.
+- Redis: Used for caching and session management.
+- Docker: Containerization tool for consistent development and deployment environments.
+- CI/CD Pipelines: Automated pipelines for testing and deploying code changes.
 # Database Design
 Entities and Fields
 - Users: id, name, email, password, created_at
@@ -30,16 +35,59 @@ Relationships
 - A property can have many reviews
 - Each booking has one payment record
 # Feature Breakdown
-- User Management: Users can sign up, log in, and manage their profiles securely.
-- Property Management: Hosts can list, edit, and delete properties with detailed descriptions and pricing.
-- Booking System: Users can search for properties and make reservations based on availability.
-- Review System: Guests can leave feedback and ratings for properties they’ve stayed in.
-- Payment Integration: Secure payment processing for bookings using encrypted transactions.
+1. API Documentation
+- OpenAPI Standard: The backend APIs are documented using the OpenAPI standard to ensure clarity and ease of integration.
+- Django REST Framework: Provides a comprehensive RESTful API for handling CRUD operations on user and property data.
+- GraphQL: Offers a flexible and efficient query mechanism for interacting with the backend.
+2. User Authentication
+- Endpoints: /users/, /users/{user_id}/
+- Features: Register new users, authenticate, and manage user profiles.
+3. Property Management
+- Endpoints: /properties/, /properties/{property_id}/
+- Features: Create, update, retrieve, and delete property listings.
+4. Booking System
+- Endpoints: /bookings/, /bookings/{booking_id}/
+- Features: Make, update, and manage bookings, including check-in and check-out details.
+5. Payment Processing
+- Endpoints: /payments/
+- Features: Handle payment transactions related to bookings.
+6. Review System
+- Endpoints: /reviews/, /reviews/{review_id}/
+- Features: Post and manage reviews for properties.
+7. Database Optimizations
+- Indexing: Implement indexes for fast retrieval of frequently accessed data.
+- Caching: Use caching strategies to reduce database load and improve performance.
 # API Security
-- Authentication: Use JWT tokens to verify user identity and maintain session integrity.
-- Authorization: Role-based access control ensures users can only perform permitted actions.
-- Rate Limiting: Prevents abuse by limiting the number of requests per user/IP.
-- Data Encryption: Sensitive data like passwords and payment info are encrypted in transit and at rest.
+- REST API: Detailed documentation available through the OpenAPI standard, including endpoints for users, properties, bookings, and payments.
+- GraphQL API: Provides a flexible query language for retrieving and manipulating data.
+# Endpoints Overview
+## REST API Endpoints
+1. Users
+- GET /users/ - List all users
+- POST /users/ - Create a new user
+- GET /users/{user_id}/ - Retrieve a specific user
+- PUT /users/{user_id}/ - Update a specific user
+- DELETE /users/{user_id}/ - Delete a specific user
+2. Properties
+- GET /properties/ - List all properties
+- POST /properties/ - Create a new property
+- GET /properties/{property_id}/ - Retrieve a specific property
+- PUT /properties/{property_id}/ - Update a specific property
+- DELETE /properties/{property_id}/ - Delete a specific property
+3. Bookings
+- GET /bookings/ - List all bookings
+- POST /bookings/ - Create a new booking
+- GET /bookings/{booking_id}/ - Retrieve a specific booking
+- PUT /bookings/{booking_id}/ - Update a specific booking
+- DELETE /bookings/{booking_id}/ - Delete a specific booking
+4. Payments
+- POST /payments/ - Process a payment
+5. Reviews
+- GET /reviews/ - List all reviews
+- POST /reviews/ - Create a new review
+- GET /reviews/{review_id}/ - Retrieve a specific review
+- PUT /reviews/{review_id}/ - Update a specific review
+- DELETE /reviews/{review_id}/ - Delete a specific review
 # CI/CD Pipeline
 CI/CD pipelines automate testing and deployment to ensure fast, reliable updates.
 - Continuous Integration (CI) Automatically runs tests on every commit using GitHub Actions.
