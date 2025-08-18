@@ -16,3 +16,31 @@ The Airbnb Clone Project is a full-stack backend simulation of a real-world book
 - GraphQL
 - Docker
 - GitHub Actions
+# Database Design
+Entities and Fields
+- Users: id, name, email, password, created_at
+- Properties: id, owner_id, title, location, price
+- Bookings: id, user_id, property_id, start_date, end_date
+- Reviews: id, user_id, property_id, rating, comment
+- Payments: id, booking_id, amount, status, payment_date
+
+Relationships
+- One user can own multiple properties
+- A booking belongs to one user and one property
+- A property can have many reviews
+- Each booking has one payment record
+# Feature Breakdown
+User Management Users can sign up, log in, and manage their profiles securely.
+Property Management Hosts can list, edit, and delete properties with detailed descriptions and pricing.
+Booking System Users can search for properties and make reservations based on availability.
+Review System Guests can leave feedback and ratings for properties they’ve stayed in.
+Payment Integration Secure payment processing for bookings using encrypted transactions.
+# API Security
+Authentication Use JWT tokens to verify user identity and maintain session integrity.
+Authorization Role-based access control ensures users can only perform permitted actions.
+Rate Limiting Prevents abuse by limiting the number of requests per user/IP.
+Data Encryption Sensitive data like passwords and payment info are encrypted in transit and at rest.
+# CI/CD Pipeline
+CI/CD pipelines automate testing and deployment to ensure fast, reliable updates.
+Continuous Integration (CI) Automatically runs tests on every commit using GitHub Actions.
+Continuous Deployment (CD) Deploys code to production using Docker containers and GitHub workflows.
